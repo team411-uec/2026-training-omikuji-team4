@@ -50,3 +50,8 @@ export function drawOmikuji(): OmikujiResult | null {
 
 // 拡張ポイント（ステップ2以降）。必要になったら足す。
 //  - 残りくじ枚数を出す: tickets.length を返す関数をこのファイルに足す（tickets は外から読めない）。
+
+//残りのくじ枚数を返す。戻り値はすべてnumber型。
+export function countOmikuji(): number {
+  return tickets.length;
+}
