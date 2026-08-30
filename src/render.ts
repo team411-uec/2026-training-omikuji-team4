@@ -73,3 +73,28 @@ export function renderCount(): void {
     }
   }
 }
+
+export function renderHistory(result: OmikujiResult | null): void {
+  if (result === null) return;
+
+  const history = document.getElementById("history");
+  if (history) {
+    const newElement = document.createElement("li");
+    newElement.textContent = result;
+    history.prepend(newElement);
+
+    const MaxHistory = 5;
+    while (history.children.length > MaxHistory) {
+      if (history.lastChild) {
+        history?.removeChild(history.lastChild);
+      }
+    }
+  }
+}
+
+export function clearHistory(): void {
+  const history = document.getElementById("history");
+  if (history) {
+    history.innerHTML = "";
+  }
+}
