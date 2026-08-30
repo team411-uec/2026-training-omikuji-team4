@@ -69,7 +69,7 @@ export function renderCount(): void {
   if (remain) {
     remain.textContent = `残りくじ枚数:${countOmikuji()}`;
     if (countOmikuji() === 0) {
-      remain.textContent = `おみくじは空です！リセットしてください！`;
+      remain.textContent = "おみくじは空です！リセットしてください！";
     }
   }
 }
