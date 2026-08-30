@@ -4,7 +4,7 @@
 // この層は完成済み（ステップ1で render.ts を実装すれば動く）。
 
 import { resetOmikuji, drawOmikuji } from "./omikuji";
-import { renderResult } from "./render";
+import { renderCount, rendermoney, renderResult } from "./render";
 
 function main(): void {
   // おみくじ箱を用意する（1回呼ぶと、くじが入った状態になる）。
@@ -18,12 +18,15 @@ function main(): void {
 
     // render.ts の renderResult を実装すると、ここで画面に結果が出る（ステップ1）。
     renderResult(result);
+    renderCount();
+    rendermoney(result);
   });
 
   resetButton?.addEventListener("click", () => {
     resetOmikuji();
     // 表示を初期状態（結果なし）に戻す。
     renderResult(null);
+    renderCount();
   });
 }
 
