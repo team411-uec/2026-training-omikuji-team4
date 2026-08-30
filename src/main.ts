@@ -5,6 +5,7 @@
 
 import { resetOmikuji, drawOmikuji } from "./omikuji";
 import { renderResult, rendermoney } from "./render";
+import { renderCount, renderResult } from "./render";
 
 function main(): void {
   // おみくじ箱を用意する（1回呼ぶと、くじが入った状態になる）。
@@ -21,6 +22,7 @@ function main(): void {
     renderResult(result);
     rendermoney(result);
     //----
+    renderCount();
   });
   moneyButton?.addEventListener("click", () => {
     const rest = document.getElementById("result");
@@ -34,6 +36,7 @@ function main(): void {
     resetOmikuji();
     // 表示を初期状態（結果なし）に戻す。
     renderResult(null);
+    renderCount();
   });
 }
 
