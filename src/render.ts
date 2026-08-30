@@ -33,7 +33,7 @@ export function rendermoney(result: string | null): void {
     } else if (result == "凶") {
       fore.textContent = "残念";
     } else {
-      fore.textContent = "ここに結果が出ます";
+      fore.textContent = "賞金がここに出ます";
     }
   }
 }
