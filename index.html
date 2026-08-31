@@ -108,11 +108,33 @@
         background: #b78f4a;
       }
 
+      .historyBox {
+        max-width: 50px;
+        margin: 24px auto;
+        padding: 2px 30px;
+        font-weight: bold;
+        text-align: center;
+        background: #fffaf0;
+        color: #a83232;
+        border: 2px solid #c9a15a;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(168, 50, 50, 0.15);
+        position: relative;
+      }
+
+      .historyBox::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border: 1px solid #c9a15a;
+        border-radius: 2px;
+        pointer-events: none;
+      }
+
       .omikuji-remaining {
         margin-top: 20px;
         text-align: center;
         font-size: 14px;
-        color: #6b5a52;
       }
 
       .omikuji-history {
@@ -121,7 +143,20 @@
         list-style: none;
         text-align: center;
         font-size: 14px;
-        color: #6b5a52;
+      }
+
+      #historyTitle {
+        font-size: 17px;
+        border-bottom: 1px solid #c9a15a;
+      }
+
+      .omikuji-history li {
+        padding: 4px 0;
+        border-bottom: 1px dashed #e2d2b4;
+      }
+
+      .omikuji-history li:last-child {
+        border-bottom: none;
       }
     </style>
   </head>
@@ -149,8 +184,10 @@
         - 引いた履歴を出す   → <ul id="history"> に <li> を足していく
     -->
     <div id="remaining" class="omikuji-remaining"></div>
-    <ul id="history" class="omikuji-history"></ul>
-
+    <div class="historyBox">
+      <p id="historyTitle">履歴</p>
+      <ul id="history" class="omikuji-history"></ul>
+    </div>
     <!-- TypeScript を読み込む（Vite が変換する）。 -->
     <script type="module" src="/src/main.ts"></script>
   </body>
